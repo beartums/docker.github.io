@@ -47,6 +47,10 @@ Create an empty `Gemfile.lock` to build our `Dockerfile`.
 
     touch Gemfile.lock
 
+If you're building this on Windows, you'll need to add a `.env` file which just contains:
+
+    COMPOSE_CONVERT_WINDOWS_PATHS=1
+    
 Next, provide an entrypoint script to fix a Rails-specific issue that
 prevents the server from restarting when a certain `server.pid` file pre-exists.
 This script will be executed every time the container gets started.
